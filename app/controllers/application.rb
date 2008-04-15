@@ -10,13 +10,7 @@ class ApplicationController < ActionController::Base
   
   
   protected
-  def ensure_logged_in
-    if session[:user]
-      if VALID_USERS.has_key? session[:user]
-        return true
-      end
-    end
-    
-    redirect_to :controller => 'login', :action => 'login'
+  def current_user
+    @current_user ||= User.find(session[:user_id])
   end
 end

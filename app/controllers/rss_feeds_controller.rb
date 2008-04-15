@@ -1,5 +1,4 @@
 class RssFeedsController < ApplicationController
-  before_filter :ensure_logged_in
   
   # GET /rss_feeds
   # GET /rss_feeds.xml
