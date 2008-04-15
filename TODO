@@ -1,0 +1,5 @@
+
+* integrate goldberg cms
+* update feeds without running the rake task
+* extend rss_feed model (blog url, user_id)
+* feed types (blogs, twitter, comments, etc.)
