@@ -3,8 +3,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
 		<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
-		<title>FeedMe!</title>
+		<title><%= [@page_title, Goldberg.settings.site_name].compact.join(" &laquo; ") %></title>
 		<meta name="generator" content="feedme <%= FEEDME_VERSION %>" />
+		<meta name="keywords" content="feeds,aggregator,planet" />
 		<%= stylesheet_link_tag 'feedme' %>
 		<%= javascript_include_tag 'jquery', 'application' %>
     <% if defined?(RAILS_ROOT)
@@ -47,7 +48,7 @@
 					<div class="title">Feeds</div>
 					<ul>
 						<% @feeds.each do |feed| %>
-							<li><%= link_to feed.title, feed.url %></li>
+							<li><%= link_to feed.title, feed.url %> (<%= link_to '?', feed_url(feed) %>)</li>
 						<% end %>
 					</ul>
 				<% end %>
