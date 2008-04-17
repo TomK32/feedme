@@ -11,6 +11,9 @@ class ApplicationController < ActionController::Base
   
   protected
   def current_user
-    @current_user ||= User.find(session[:user_id])
+    current_user ||= User.find(session[:goldberg][:user_id]) rescue nil
+  end
+  def get_feeds
+    @feeds = Feed.find :all, :order => 'title'
   end
 end

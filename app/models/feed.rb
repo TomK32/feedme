@@ -6,6 +6,7 @@ class Feed < ActiveRecord::Base
   
   validates_presence_of :title
   validates_presence_of :url
+  belongs_to :user
   
   def process_feed(xml)
     doc = Hpricot.XML(xml)

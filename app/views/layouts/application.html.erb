@@ -62,6 +62,9 @@
 			</div>
 			
 			<div id="content">
+			<% if @page_title %>
+			  <h2><%= @page_title %></h2>
+			<% end %>
 				<%= yield %>
 			</div>
 			

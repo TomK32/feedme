@@ -1,5 +1,7 @@
 class FeedsController < ApplicationController
   
+  before_filter :get_feeds
+
   # GET /feeds
   # GET /feeds.xml
   def index

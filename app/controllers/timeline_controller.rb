@@ -14,10 +14,5 @@ class TimelineController < ApplicationController
                                 :conditions => ['published BETWEEN ? AND ?', @end_at, @start_at],
                                 :order => 'published DESC'
   end
-  
-  
-  protected
-  def get_feeds
-    @feeds = Feed.find :all, :order => 'title'
-  end
+
 end

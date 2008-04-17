@@ -1,13 +1,14 @@
-<p>
-  <b>Title:</b>
-  <%=h @feed.title %>
-</p>
+<% @page_title = 'Feed for %s' % @feed.title %>
 
-<p>
-  <b>Url:</b>
-  <%=h @feed.url %>
-</p>
+<ul id="feedinfo">
+  <li>Feed URL: <%= link_to @feed.url, @feed.url %></li>
+  <li>Alternative URL: <%= link_to @feed.other_url, @feed.other_url %></li>
+<% unless @feed.user.nil? %>
+  <li>Added by <%= link_to feed.user.name, user_show_url(feed.user) %></li>
+<% end %>
+</ul>
 
+<%= render :partial => '/articles/article', :collection => @feed.articles %>
 
 <%= link_to 'Edit', edit_feed_path(@feed) %> |
 <%= link_to 'Back', feeds_path %>
