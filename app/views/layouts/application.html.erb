@@ -1,60 +1,72 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-    <head>
-        <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
-        <title>FeedMe!</title>
-        <%= stylesheet_link_tag 'feedme' %>
-        <%= javascript_include_tag 'jquery', 'application' %>
-    </head>
-    
-    <body>
-        <div id="main_column">
-            <div id="header">
-                <h1>FeedMe!</h1>
-                
-                <div id="tagline">
-                    RSS NOM NOM NOM
-                </div>
-            </div>
-            
-            <% if flash[:error] %>
-                <div id="flash">
-                    <%= flash[:error] %>
-                </div>
-            <% end %>
-            
-            <div id="navigation">
-                <h2>Archives</h2>
-                
-                <ul>
-                    <% for day_offset in 0..6 %>
-                        <li>
-                            <a href="/<%= (Time.now - day_offset.days).strftime('%Y/%m/%d') %>"><%= (Time.now - day_offset.days).strftime('%B %d, %Y') %></a>
-                        </li>
-                    <% end %>
-                </ul>
-                
-                <% if @feeds %>
-                    <br />
-                    
-                    <h2>Feeds</h2>
-                    
-                    <ul>
-                        <% @feeds.each do |feed| %>
-                            <li><%= link_to feed.title, feed.url %></li>
-                        <% end %>
-                    </ul>
-                <% end %>
-            </div>
-            
-            <div id="content">
-                <%= yield %>
-            </div>
-            
-            <div id="footer">
-                Code by <a href="http://www.toastdriven.com/" title="Toast Driven">Toast Driven</a> - &copy; 2008
-            </div>
-        </div>
-    </body>
+	<head>
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+		<title>FeedMe!</title>
+		<meta name="generator" content="feedme <%= FEEDME_VERSION %>" />
+		<%= stylesheet_link_tag 'feedme' %>
+		<%= javascript_include_tag 'jquery', 'application' %>
+    <% if defined?(RAILS_ROOT)
+         if File.exists?("#{RAILS_ROOT}/public/stylesheets/ajax_scaffold.css") -%>
+    <%= stylesheet_link_tag 'ajax_scaffold', :media => 'all' %>
+      <% end 
+         if File.exists?("#{RAILS_ROOT}/public/javascripts/ajax_scaffold.js") -%>
+    <%= javascript_include_tag 'rico_corner', 'ajax_scaffold' %>
+      <% end
+      end -%>
+
+    <link rel="stylesheet" href="/goldberg/stylesheets/goldberg.css" type="text/css" media="screen" />
+
+	</head>
+	
+	<body>
+		<div id="main_column">
+			<div id="header">
+      <h1><%= link_to Goldberg.settings.site_name, '/' %></h1>
+      <p><%= Goldberg.settings.site_subtitle %></p>
+			</div>
+			
+			<% if flash[:error] %>
+				<div id="flash">
+					<%= flash[:error] %>
+				</div>
+			<% end %>
+			
+			<div id="navigation">
+				<div class="title">Archives</div>
+				<ul>
+					<% for day_offset in 0..6 %>
+						<li>
+							<a href="/<%= (Time.now - day_offset.days).strftime('%Y/%m/%d') %>"><%= (Time.now - day_offset.days).strftime('%B %d, %Y') %></a>
+						</li>
+					<% end %>
+				</ul>
+				
+				<% if @feeds %>
+					<div class="title">Feeds</div>
+					<ul>
+						<% @feeds.each do |feed| %>
+							<li><%= link_to feed.title, feed.url %></li>
+						<% end %>
+					</ul>
+				<% end %>
+
+        <div class="menu">
+          <div class="title">Menu</div>
+          <%= goldberg_main_menu %>
+          <%= goldberg_left_menu %>
+          <%= goldberg_login %>
+        </div>  
+			</div>
+			
+			<div id="content">
+				<%= yield %>
+			</div>
+			
+			<div id="footer">
+				<%= Goldberg.settings.footer_message %>
+			</div>
+		</div>
+	</body>
 </html>

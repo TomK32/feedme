@@ -1,0 +1,85 @@
+--- 
+- name: home
+  controller_action_id: 
+  id: 1
+  seq: 1
+  parent_id: 
+  label: Home
+  content_page_id: 1
+- name: about
+  controller_action_id: 
+  id: 2
+  seq: 4
+  parent_id: 
+  label: About
+  content_page_id: 6
+- name: admin
+  controller_action_id: 
+  id: 3
+  seq: 3
+  parent_id: 
+  label: Administration
+  content_page_id: 9
+- name: setup/permissions
+  controller_action_id: 4
+  id: 5
+  seq: 3
+  parent_id: 9
+  label: Permissions
+  content_page_id: 
+- name: setup/roles
+  controller_action_id: 3
+  id: 6
+  seq: 2
+  parent_id: 9
+  label: Roles
+  content_page_id: 
+- name: setup/pages
+  controller_action_id: 8
+  id: 7
+  seq: 5
+  parent_id: 9
+  label: Content Pages
+  content_page_id: 
+- name: setup/controllers
+  controller_action_id: 9
+  id: 8
+  seq: 4
+  parent_id: 9
+  label: Controllers / Actions
+  content_page_id: 
+- name: setup
+  controller_action_id: 
+  id: 9
+  seq: 1
+  parent_id: 3
+  label: Setup
+  content_page_id: 8
+- name: setup/menus
+  controller_action_id: 11
+  id: 11
+  seq: 6
+  parent_id: 9
+  label: Menu Editor
+  content_page_id: 
+- name: setup/system_settings
+  controller_action_id: 12
+  id: 12
+  seq: 7
+  parent_id: 9
+  label: System Settings
+  content_page_id: 
+- name: setup/users
+  controller_action_id: 15
+  id: 13
+  seq: 1
+  parent_id: 9
+  label: Users
+  content_page_id: 
+- name: feed
+  controller_action_id: 24
+  id: 15
+  seq: 2
+  parent_id: 
+  label: Feeds
+  content_page_id: 

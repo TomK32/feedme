@@ -1,0 +1,299 @@
+--- 
+- name: home
+  markup_style_id: 1
+  updated_at: 2008-04-17 16:10:39 +02:00
+  title: Home Page
+  permission_id: 3
+  id: 1
+  content: This is some feed aggregator, you can change this text in the admin area under _content pages_ as well as all the other pages like _about_.
+  markup_style: Textile
+  created_at: 2006-06-12 00:31:56 +02:00
+  content_cache: <p>This is some feed aggregator, you can change this text in the admin area under <em>content pages</em> as well as all the other pages like <em>about</em>.</p>
+- name: expired
+  markup_style_id: 1
+  updated_at: 2008-04-17 15:47:46 +02:00
+  title: Session Expired
+  permission_id: 3
+  id: 2
+  content: |
+    h1. Session Expired
+    
+    Your session has expired due to inactivity.
+    
+    To continue please login again.
+
+  markup_style: Textile
+  created_at: 2006-06-12 00:33:14 +02:00
+  content_cache: |-
+    <h1>Session Expired</h1>
+    
+    
+    	<p>Your session has expired due to inactivity.</p>
+    
+    
+    	<p>To continue please login again.</p>
+- name: notfound
+  markup_style_id: 1
+  updated_at: 2008-04-17 15:47:46 +02:00
+  title: Not Found!
+  permission_id: 3
+  id: 3
+  content: |-
+    h1. Not Found
+    
+    The page you requested was not found!
+    
+    Please contact your system administrator.
+  markup_style: Textile
+  created_at: 2006-06-12 00:33:49 +02:00
+  content_cache: |-
+    <h1>Not Found</h1>
+    
+    
+    	<p>The page you requested was not found!</p>
+    
+    
+    	<p>Please contact your system administrator.</p>
+- name: denied
+  markup_style_id: 1
+  updated_at: 2008-04-17 15:47:46 +02:00
+  title: Permission Denied!
+  permission_id: 3
+  id: 4
+  content: |-
+    h1. Permission Denied
+    
+    Sorry, but you don't have permission to view that page.
+    
+    Please contact your system administrator.
+  markup_style: Textile
+  created_at: 2006-06-12 00:34:30 +02:00
+  content_cache: |-
+    <h1>Permission Denied</h1>
+    
+    
+    	<p>Sorry, but you don&#8217;t have permission to view that page.</p>
+    
+    
+    	<p>Please contact your system administrator.</p>
+- name: about
+  markup_style_id: 1
+  updated_at: 2008-04-17 16:09:17 +02:00
+  title: About
+  permission_id: 3
+  id: 6
+  content: |-
+    Some text about goes here.
+    
+    This is an aggregator for various feeds from blogs, twitter, flickr etc.
+  markup_style: Textile
+  created_at: 2006-06-12 10:13:47 +02:00
+  content_cache: |-
+    <p>Some text about goes here.</p>
+    
+    
+    	<p>This is an aggregator for various feeds from blogs, twitter, flickr etc.</p>
+- name: site_admin
+  markup_style_id: 1
+  updated_at: 2008-04-17 16:37:55 +02:00
+  title: Site Administration
+  permission_id: 1
+  id: 8
+  content: |
+    h3. FeedMe!
+    
+    FeedMe! uses the Goldberg plugin for basic CMS, user permissions and such.
+    
+    There have been some changes to the basic goldberg installation, only in the database, and you are save to keep them as they are. You may allow users to register themselfx so they can add feeds (which a moderator must activate then).
+    
+    h3. Goldberg
+    
+    This is where you will find all the Goldberg-specific administration and configuration features.  In here you can:
+    
+    * Set up Users.
+    
+    * Manage Roles and their Permissions.
+    
+    * Set up any Controllers and their Actions for your application.
+    
+    * Edit the Content Pages of the site.
+    
+    * Adjust Goldberg's system settings.
+    
+    
+    h4. Users
+    
+    You can set up Users with a username, password and a Role.
+    
+    
+    h4. Roles and Permissions
+    
+    A User's Permissions affect what Actions they can perform and what Pages they can see.  And because each Menu Item is based either on a Page or an Action, the Permissions determine what Menu Items the User can and cannot see.
+    
+    A Role is a set of Permissions.  Roles are assigned to Users.  Roles are hierarchical: a Role can have a parent Role; and if so it will inherit the Permissions of the parent Role, and all its parents.
+    
+    
+    h4. Controllers and Actions
+    
+    To execute any Action, a user must have the appropriate Permission.  Therefore all Controllers and Actions you set up for your Rails application need to be entered here, otherwise no user will be able to execute them.
+    
+    You start by setting up the Controller and assigning it a Permission.  The Permission will be used as the default for any Actions invoked for that Controller.
+    
+    You have the option of setting up specific Actions for the Controllers.  You would want to do that if the Action were to appear as a Menu Item, or if it were to have a different level of security to the default for the Controller.
+    
+    
+    h4. Content Pages
+    
+    Goldberg has a very simple CMS built in.  You can create pages to be displayed on the site, possibly in menu items.
+    
+    
+    h2. Menu Editor
+    
+    Once you have set up your Controller Actions and Content Pages, you can put them into the site's menu using the Menu Editor.
+    
+    In the Menu Editor you can add and remove Menu Items and move them around.  The security of a Menu Item (whether the user can see it or not) depends on the Permission of the Action or Page attached to that Menu Item.
+    
+    h4. System Settings
+    
+    Go here to view and edit the settings that determine how Goldberg operates.
+
+  markup_style: Textile
+  created_at: 2006-06-21 21:32:35 +02:00
+  content_cache: |-
+    <h3>FeedMe!</h3>
+    
+    
+    	<p>FeedMe! uses the Goldberg plugin for basic <span class="caps">CMS</span>, user permissions and such.</p>
+    
+    
+    	<p>There have been some changes to the basic goldberg installation, only in the database, and you are save to keep them as they are. You may allow users to register themselfx so they can add feeds (which a moderator must activate then).</p>
+    
+    
+    	<h3>Goldberg</h3>
+    
+    
+    	<p>This is where you will find all the Goldberg-specific administration and configuration features.  In here you can:</p>
+    
+    
+    	<ul>
+    	<li>Set up Users.</li>
+    	</ul>
+    
+    
+    	<ul>
+    	<li>Manage Roles and their Permissions.</li>
+    	</ul>
+    
+    
+    	<ul>
+    	<li>Set up any Controllers and their Actions for your application.</li>
+    	</ul>
+    
+    
+    	<ul>
+    	<li>Edit the Content Pages of the site.</li>
+    	</ul>
+    
+    
+    	<ul>
+    	<li>Adjust Goldberg&#8217;s system settings.</li>
+    	</ul>
+    
+    
+    	<h4>Users</h4>
+    
+    
+    	<p>You can set up Users with a username, password and a Role.</p>
+    
+    
+    	<h4>Roles and Permissions</h4>
+    
+    
+    	<p>A User&#8217;s Permissions affect what Actions they can perform and what Pages they can see.  And because each Menu Item is based either on a Page or an Action, the Permissions determine what Menu Items the User can and cannot see.</p>
+    
+    
+    	<p>A Role is a set of Permissions.  Roles are assigned to Users.  Roles are hierarchical: a Role can have a parent Role; and if so it will inherit the Permissions of the parent Role, and all its parents.</p>
+    
+    
+    	<h4>Controllers and Actions</h4>
+    
+    
+    	<p>To execute any Action, a user must have the appropriate Permission.  Therefore all Controllers and Actions you set up for your Rails application need to be entered here, otherwise no user will be able to execute them.</p>
+    
+    
+    	<p>You start by setting up the Controller and assigning it a Permission.  The Permission will be used as the default for any Actions invoked for that Controller.</p>
+    
+    
+    	<p>You have the option of setting up specific Actions for the Controllers.  You would want to do that if the Action were to appear as a Menu Item, or if it were to have a different level of security to the default for the Controller.</p>
+    
+    
+    	<h4>Content Pages</h4>
+    
+    
+    	<p>Goldberg has a very simple <span class="caps">CMS</span> built in.  You can create pages to be displayed on the site, possibly in menu items.</p>
+    
+    
+    	<h2>Menu Editor</h2>
+    
+    
+    	<p>Once you have set up your Controller Actions and Content Pages, you can put them into the site&#8217;s menu using the Menu Editor.</p>
+    
+    
+    	<p>In the Menu Editor you can add and remove Menu Items and move them around.  The security of a Menu Item (whether the user can see it or not) depends on the Permission of the Action or Page attached to that Menu Item.</p>
+    
+    
+    	<h4>System Settings</h4>
+    
+    
+    	<p>Go here to view and edit the settings that determine how Goldberg operates.</p>
+- name: admin
+  markup_style_id: 1
+  updated_at: 2008-04-17 15:47:46 +02:00
+  title: Administration
+  permission_id: 1
+  id: 9
+  content: |
+    h1. Site Administration
+    
+    This is where the administrator can set up the site.
+    
+    There is one menu item here by default -- "Setup":/menu/setup.  That contains all the Goldberg configuration options.
+    
+    You can add more menu items here to administer your application if you want, by going to "Setup, Menu Editor":/menu/setup/menus.
+
+  markup_style: Textile
+  created_at: 2006-06-26 16:47:09 +02:00
+  content_cache: |-
+    <h1>Site Administration</h1>
+    
+    
+    	<p>This is where the administrator can set up the site.</p>
+    
+    
+    	<p>There is one menu item here by default&#8212;<a href="/menu/setup">Setup</a>.  That contains all the Goldberg configuration options.</p>
+    
+    
+    	<p>You can add more menu items here to administer your application if you want, by going to <a href="/menu/setup/menus">Setup, Menu Editor</a>.</p>
+- name: unconfirmed
+  markup_style_id: 
+  updated_at: 2008-04-17 15:47:46 +02:00
+  title: Not Permitted
+  permission_id: 3
+  id: 11
+  content: |
+    h1. Not Permitted
+    
+    Sorry, but you are not allowed to log into the site until your registration has been confirmed.
+    
+    If there is an issue please contact the system administrator.
+
+  markup_style: Textile
+  created_at: 2007-04-01 10:37:42 +02:00
+  content_cache: |-
+    <h1>Not Permitted</h1>
+    
+    
+    	<p>Sorry, but you are not allowed to log into the site until your registration has been confirmed.</p>
+    
+    
+    	<p>If there is an issue please contact the system administrator.</p>

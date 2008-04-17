@@ -59,4 +59,5 @@ Rails::Initializer.run do |config|
 end
 
 FEED_TYPES = [Feed]
+FEEDME_VERSION = '0.2-tk'
 

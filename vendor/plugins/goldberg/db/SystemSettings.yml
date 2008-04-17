@@ -1,0 +1,19 @@
+--- 
+- session_expired_page_id: 2
+  start_path: /self_show
+  session_timeout: 720000
+  site_default_page_id: 1
+  self_reg_enabled: false
+  menu_depth: 3
+  site_url_prefix: http://localhost:3000/
+  self_reg_send_confirmation_email: true
+  self_reg_confirmation_required: true
+  permission_denied_page_id: 4
+  id: 1
+  self_reg_role_id: 2
+  not_found_page_id: 3
+  site_name: FeedMe!
+  public_role_id: 1
+  footer_message: "&copy; 2008 by FeedMe!"
+  self_reg_confirmation_error_page_id: 11
+  site_subtitle: A feed aggregator
