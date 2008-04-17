@@ -1,0 +1,15 @@
+
+  <p><label>Title: <br />
+    <%= f.text_field :title %>
+  </label></p>
+  <p><label>Feed URL: <br />
+    <%= f.text_field :url %>
+  </label></p>
+
+  <p><label>URL: <br />
+    <%= f.text_field :other_url %>
+  </label></p>
+
+  <p><label>Type: <br />
+    <%= f.select :type, FEED_TYPES.collect{|ft| [ft.class_name, ft.class_name]} %>
+  </label></p>

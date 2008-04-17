@@ -1,8 +1,8 @@
 require 'hpricot'
 require 'open-uri'
 
-class RssFeed < ActiveRecord::Base
-  has_many :rss_articles, :dependent => :delete_all
+class Feed < ActiveRecord::Base
+  has_many :articles, :dependent => :delete_all
   
   validates_presence_of :title
   validates_presence_of :url
@@ -27,9 +27,9 @@ class RssFeed < ActiveRecord::Base
     (rss/:channel/:item).each do |item|
       link = (item/:link).inner_html
       
-      if not RssArticle.find_by_link(link)
-        rss_article = RssArticle.new
-        rss_article.rss_feed = self
+      if not Article.find_by_link(link)
+        rss_article = Article.new
+        rss_article.feed = self
         rss_article.title = (item/:title).inner_html
         rss_article.link = link
         rss_article.author = (item/:author).inner_html
@@ -56,9 +56,9 @@ class RssFeed < ActiveRecord::Base
     (atom/:entry).each do |item|
       link = (item/:link).attr('href')
       
-      if not RssArticle.find_by_link(link)
-        atom_article = RssArticle.new
-        atom_article.rss_feed = self
+      if not Article.find_by_link(link)
+        atom_article = Article.new
+        atom_article.feed = self
         atom_article.title = (item/:title).inner_html
         atom_article.link = link
         atom_article.author = (item/:author/:name).inner_html

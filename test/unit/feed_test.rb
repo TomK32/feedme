@@ -1,6 +1,6 @@
 require File.dirname(__FILE__) + '/../test_helper'
 
-class RssFeedTest < ActiveSupport::TestCase
+class FeedTest < ActiveSupport::TestCase
   def setup
     @sample_rss = <<RSS
 <?xml version="1.0" encoding="utf-8"?>
@@ -69,8 +69,8 @@ GitHub comes highly recommended and I still have two invites available if anyone
 </feed>
 ATOM
     
-    @rf = RssFeed.create(:title => 'Test Feed', :url => 'http://www.snow-wolf.net/')
-    @rss_feed_doc = Hpricot.XML(@sample_rss)
+    @rf = Feed.create(:title => 'Test Feed', :url => 'http://www.snow-wolf.net/')
+    @feed_doc = Hpricot.XML(@sample_rss)
     @atom_feed_doc = Hpricot.XML(@sample_atom)
   end
   
@@ -79,22 +79,22 @@ ATOM
     assert true
   end
   
-  def test_process_rss_feed
-    assert_nothing_raised(RuntimeError) { @rf.process_rss_feed(@rss_feed_doc) }
+  def test_process_feed
+    assert_nothing_raised(RuntimeError) { @rf.process_rss_feed(@feed_doc) }
     
-    rf = RssFeed.find(:first)
-    assert_equal(2, rf.rss_articles.size)
-    assert_equal('All Your (Code) Base Are Belong To GitHub', rf.rss_articles[0].title)
-    assert_equal('HTML Elements Quiz', rf.rss_articles[1].title)
+    rf = Feed.find(:first)
+    assert_equal(2, rf.articles.size)
+    assert_equal('All Your (Code) Base Are Belong To GitHub', rf.articles[0].title)
+    assert_equal('HTML Elements Quiz', rf.articles[1].title)
   end
   
   def test_process_atom_feed
     assert_nothing_raised(RuntimeError) { @rf.process_atom_feed(@atom_feed_doc) }
     
-    rf = RssFeed.find(:first)
-    assert_equal(2, rf.rss_articles.size)
-    assert_equal('All Your (Code) Base Are Belong To GitHub', rf.rss_articles[0].title)
-    assert_equal('HTML Elements Quiz', rf.rss_articles[1].title)
+    rf = Feed.find(:first)
+    assert_equal(2, rf.articles.size)
+    assert_equal('All Your (Code) Base Are Belong To GitHub', rf.articles[0].title)
+    assert_equal('HTML Elements Quiz', rf.articles[1].title)
   end
   
   def test_process_feed

@@ -1,6 +1,6 @@
-class RssArticle < ActiveRecord::Base
-  belongs_to :rss_feed
+class Article < ActiveRecord::Base
+  belongs_to :feed
   
-  validates_presence_of :rss_feed_id
-  validates_numericality_of :rss_feed_id
+  validates_presence_of :feed_id
+  validates_numericality_of :feed_id
 end

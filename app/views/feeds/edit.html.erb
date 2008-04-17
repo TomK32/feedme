@@ -1,8 +1,8 @@
 <h1>Editing RSS Feed</h1>
 
-<%= error_messages_for :rss_feed %>
+<%= error_messages_for :feed %>
 
-<% form_for(@rss_feed) do |f| %>
+<% form_for(@feed) do |f| %>
   <p>
     <b>Title</b><br />
     <%= f.text_field :title %>
@@ -18,5 +18,5 @@
   </p>
 <% end %>
 
-<%= link_to 'Show', @rss_feed %> |
-<%= link_to 'Back', rss_feeds_path %>
+<%= link_to 'Show', @feed %> |
+<%= link_to 'Back', feeds_path %>

@@ -10,7 +10,7 @@ class TimelineController < ApplicationController
     
     @start_at = @current_date.end_of_day
     @end_at = @current_date.beginning_of_day
-    @articles = RssArticle.find :all, 
+    @articles = Article.find :all, 
                                 :conditions => ['published BETWEEN ? AND ?', @end_at, @start_at],
                                 :order => 'published DESC'
   end
@@ -18,6 +18,6 @@ class TimelineController < ApplicationController
   
   protected
   def get_feeds
-    @feeds = RssFeed.find :all, :order => 'title'
+    @feeds = Feed.find :all, :order => 'title'
   end
 end

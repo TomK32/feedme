@@ -3,7 +3,7 @@ require 'config/environment'
 namespace :feedme do
   desc "Pull the latest feeds and populate the database."
   task :pull_feeds do 
-    feeds = RssFeed.find(:all)
+    feeds = Feed.find(:all)
     
     feeds.each do |feed|
       begin
