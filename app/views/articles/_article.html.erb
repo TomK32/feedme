@@ -3,7 +3,7 @@
 		
 	<div class="metadata">
 <% if params[:controller] == 'timeline' %>
-	  <span class="title"><%= article.feed.title %></span>
+	  <span class="title"><%= link_to h(article.feed.title), feed_url(article.feed) %></span>
 <% end %>
 	  <span class="date"><%= article.published.strftime('%A, %B %d, %Y @ %I:%M %p') %></span>
 	  <span class="author">by <%= h(article.author) %></span>
