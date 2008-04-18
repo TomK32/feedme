@@ -114,3 +114,10 @@ ul, ol, dl {
     padding-top: 20px;
     text-align: center;
 }
+
+.error {
+	color: red;
+}
+.notice {
+	color: #009900;
+}
