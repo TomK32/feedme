@@ -83,6 +83,9 @@ ul, ol, dl {
     width: 500px;
 }
 
+#content * {
+	overflow: auto;
+}
 .article {
     border-bottom: dotted 1px #666666;
     margin-bottom: 30px;

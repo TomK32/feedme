@@ -1,15 +1,12 @@
 <div class="article">
-    <div class="article_header">
-        <h2><%= link_to h(article.title), article.link %></h2>
-        
-        <span><%= article.feed.title %> - <%= article.published.strftime('%A, %B %d, %Y @ %I:%M %p') %></span>
-    </div>
-
-    <div class="article_author">
-        <%= h(article.author) %>
-    </div>
-    
-    <div class="article_content">
-        <%= article.content %>
-    </div>
+	<h3><%= link_to h(article.title), article.link %></h3>
+		
+	<div class="metadata">
+<% if params[:controller] == 'timeline' %>
+	  <span class="title"><%= article.feed.title %></span>
+<% end %>
+	  <span class="date"><%= article.published.strftime('%A, %B %d, %Y @ %I:%M %p') %></span>
+	  <span class="author">by <%= h(article.author) %></span>
+  </div>
+	<div class="content"><%= article.content %></div>
 </div>
