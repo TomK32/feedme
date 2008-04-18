@@ -2,6 +2,20 @@ class FeedsController < ApplicationController
   
   before_filter :get_feeds
 
+  def ping
+    feed = Feed.find_by_url(params[:url])
+    if feed
+      if feed.refresh
+        flash[:notice] = "Successfully retrieved feed"
+      else
+        flash[:error] = "Couldn't retrieve feed"
+      end
+      redirect_to :action => :show, :id => feed.id
+    else
+      flash[:error] = "No such feed found!"
+    end
+  end
+
   # GET /feeds
   # GET /feeds.xml
   def index

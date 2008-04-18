@@ -1,6 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :feeds
-  
+  map.resources :feeds, :collection => {:ping => :any}
   map.root :controller => 'timeline', :action => 'articles_for'
 
   map.articles_for ':year/:month/:day', :controller => 'timeline', :action => 'articles_for',

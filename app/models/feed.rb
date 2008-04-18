@@ -8,6 +8,10 @@ class Feed < ActiveRecord::Base
   validates_presence_of :url
   belongs_to :user
   
+  def refresh
+    process_feed(pull_feed)
+  end
+  
   def process_feed(xml)
     doc = Hpricot.XML(xml)
     
@@ -86,15 +90,9 @@ class Feed < ActiveRecord::Base
   
   def pull_feed
     the_rss = ""
-    
-    begin
-      f = open(self.url, 'r')
-      the_rss = f.read()
-      f.close 
-    rescue
-      # For now, do nothing. Some kind of notification might be nice here.
-    end
-    
+    f = open(self.url, 'r')
+    the_rss = f.read()
+    f.close 
     the_rss
   end
   
