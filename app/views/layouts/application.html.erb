@@ -28,12 +28,6 @@
       <p><%= Goldberg.settings.site_subtitle %></p>
 			</div>
 			
-			<% if flash[:error] %>
-				<div id="flash">
-					<%= flash[:error] %>
-				</div>
-			<% end %>
-			
 			<div id="navigation">
 				<div class="title">Archives</div>
 				<ul>
@@ -62,6 +56,12 @@
 			</div>
 			
 			<div id="content">
+      <% flash.each do |type, message| %>
+      <div class="<%= type %>">
+        <%= message %>
+      </div>
+      <% end %>
+
 			<% if @page_title %>
 			  <h2><%= @page_title %></h2>
 			<% end %>
