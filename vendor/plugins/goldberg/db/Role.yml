@@ -1,6 +1,6 @@
 --- 
 - name: Public
-  updated_at: 2008-04-17 16:39:14 +02:00
+  updated_at: 2008-04-19 01:17:13 +02:00
   start_path: 
   default_page_id: 
   cache: 
@@ -8,8 +8,10 @@
       actions: 
         feeds: 
           new: false
+          ping: true
           create: false
           index: true
+          show: true
         goldberg/site_controllers: 
           list: false
         goldberg/menu_items: 
@@ -52,6 +54,7 @@
         goldberg/roles: false
         goldberg/system_settings: false
         goldberg/content_pages: false
+        articles: false
         goldberg/auth: false
         goldberg/controller_actions: false
         goldberg/users: false
@@ -70,7 +73,7 @@
       role_id: 1
       role_ids: 
       - 1
-      updated_at: 2008-04-17 16:39:14 +02:00
+      updated_at: 2008-04-19 01:17:13 +02:00
     :menu: !ruby/object:Goldberg::Menu 
       by_id: 
         1: &id003 !ruby/object:Goldberg::Menu::Node 
@@ -125,7 +128,7 @@
   parent_id: 
   created_at: 2006-06-23 21:03:49 +02:00
 - name: Member
-  updated_at: 2008-04-17 16:39:14 +02:00
+  updated_at: 2008-04-19 01:17:13 +02:00
   start_path: 
   default_page_id: 
   cache: 
@@ -133,8 +136,10 @@
       actions: 
         feeds: 
           new: true
+          ping: true
           create: true
           index: true
+          show: true
         goldberg/site_controllers: 
           list: false
         goldberg/menu_items: 
@@ -177,6 +182,7 @@
         goldberg/roles: false
         goldberg/system_settings: false
         goldberg/content_pages: false
+        articles: true
         goldberg/auth: false
         goldberg/controller_actions: false
         goldberg/users: false
@@ -197,7 +203,7 @@
       role_ids: 
       - 2
       - 1
-      updated_at: 2008-04-17 16:39:14 +02:00
+      updated_at: 2008-04-19 01:17:13 +02:00
     :menu: !ruby/object:Goldberg::Menu 
       by_id: 
         1: &id007 !ruby/object:Goldberg::Menu::Node 
@@ -252,7 +258,7 @@
   parent_id: 1
   created_at: 2006-06-23 21:03:50 +02:00
 - name: Administrator
-  updated_at: 2008-04-17 16:39:14 +02:00
+  updated_at: 2008-04-19 01:17:13 +02:00
   start_path: /menu/admin
   default_page_id: 8
   cache: 
@@ -260,8 +266,10 @@
       actions: 
         feeds: 
           new: true
+          ping: true
           create: true
           index: true
+          show: true
         goldberg/site_controllers: 
           list: true
         goldberg/menu_items: 
@@ -295,7 +303,7 @@
           self_create: true
           confirm_registration_submit: true
       controllers: 
-        feeds: false
+        feeds: true
         goldberg/site_controllers: true
         goldberg/roles_permissions: true
         goldberg/menu_items: true
@@ -304,6 +312,7 @@
         goldberg/roles: true
         goldberg/system_settings: true
         goldberg/content_pages: true
+        articles: true
         goldberg/auth: true
         goldberg/controller_actions: true
         goldberg/users: true
@@ -319,15 +328,17 @@
       permission_ids: 
       - 1
       - 5
+      - 6
       - 4
       - 2
       - 3
       role_id: 3
       role_ids: 
       - 3
+      - 4
       - 2
       - 1
-      updated_at: 2008-04-17 16:39:14 +02:00
+      updated_at: 2008-04-19 01:17:13 +02:00
     :menu: !ruby/object:Goldberg::Menu 
       by_id: 
         5: &id018 !ruby/object:Goldberg::Menu::Node 
@@ -489,10 +500,10 @@
       - *id019
   id: 3
   description: ""
-  parent_id: 2
+  parent_id: 4
   created_at: 2006-06-23 21:03:48 +02:00
 - name: Moderator
-  updated_at: 2008-04-17 16:39:14 +02:00
+  updated_at: 2008-04-19 01:17:14 +02:00
   start_path: ""
   default_page_id: 
   cache: 
@@ -500,8 +511,10 @@
       actions: 
         feeds: 
           new: true
+          ping: true
           create: true
           index: true
+          show: true
         goldberg/site_controllers: 
           list: false
         goldberg/menu_items: 
@@ -535,7 +548,7 @@
           self_create: true
           confirm_registration_submit: true
       controllers: 
-        feeds: false
+        feeds: true
         goldberg/site_controllers: false
         goldberg/roles_permissions: false
         goldberg/menu_items: false
@@ -544,6 +557,7 @@
         goldberg/roles: false
         goldberg/system_settings: false
         goldberg/content_pages: false
+        articles: true
         goldberg/auth: false
         goldberg/controller_actions: false
         goldberg/users: false
@@ -558,6 +572,7 @@
         denied: true
       permission_ids: 
       - 5
+      - 6
       - 4
       - 3
       role_id: 4
@@ -565,7 +580,7 @@
       - 4
       - 2
       - 1
-      updated_at: 2008-04-17 16:39:14 +02:00
+      updated_at: 2008-04-19 01:17:14 +02:00
     :menu: !ruby/object:Goldberg::Menu 
       by_id: 
         1: &id024 !ruby/object:Goldberg::Menu::Node 

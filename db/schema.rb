@@ -23,14 +23,15 @@ ActiveRecord::Schema.define(:version => 4) do
   end
 
   create_table "feeds", :force => true do |t|
-    t.string   "title",                     :null => false
-    t.text     "url",        :limit => 255, :null => false
+    t.string   "title",                                               :null => false
+    t.text     "url",             :limit => 255,                      :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "other_url"
-    t.string   "type"
+    t.text     "alternative_url"
+    t.string   "type",                           :default => "Feed"
     t.integer  "user_id"
-    t.string   "frequency"
+    t.boolean  "active",                         :default => false
+    t.string   "frequency",                      :default => "1.day"
   end
 
 end

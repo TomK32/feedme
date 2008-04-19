@@ -129,3 +129,13 @@
   id: 26
   url_to_use: ""
   site_controller_id: 12
+- name: show
+  permission_id: 3
+  id: 27
+  url_to_use: ""
+  site_controller_id: 12
+- name: ping
+  permission_id: 4
+  id: 28
+  url_to_use: ""
+  site_controller_id: 12
