@@ -22,8 +22,9 @@ h2. Installing
 
 # Grab the code.
 # Copy the '@config/database.yml.dist@' to '@config/database.yml@'. Reconfigure as necessary.
-# run '@rake db:schema:load@' (alternatively you may want to run '@rake db:migrations@')
-# run '@rake goldberg:load_bootstrap@'
+# Create the '@log@' directory
+# Run '@rake db:schema:load@' (alternatively you may want to run '@rake db:migrations@')
+# Run '@rake goldberg:load_bootstrap@'
 # Fire up the server.
 # Login as user '@admin@' password '@admin@'
 # Change you password. I mean it!
