@@ -14,9 +14,7 @@ h2. Requirements
 
 * A decent version of Ruby.
 * Rails 2.0+
-* Hpricot
-* open-uri
-* Balls of steel and an iron will.
+* FeedTools
 
 h2. Installing
 

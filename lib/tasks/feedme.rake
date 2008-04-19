@@ -7,8 +7,7 @@ namespace :feedme do
     
     feeds.each do |feed|
       begin
-        the_feed_xml = feed.pull_feed
-        feed.process_feed(the_feed_xml)
+        feed.refresh
       rescue RuntimeError => e
         # Silent but deadly...well, not so much.
         # Let's note this and move on to the next feed.
