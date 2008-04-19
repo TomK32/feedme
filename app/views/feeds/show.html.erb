@@ -10,5 +10,6 @@
 
 <%= render :partial => '/articles/article', :collection => @feed.articles %>
 
+<%= link_to 'Ping', :controller => :feeds, :action => :ping, :url => @feed.url %> |
 <%= link_to 'Edit', edit_feed_path(@feed) %> |
 <%= link_to 'Back', feeds_path %>

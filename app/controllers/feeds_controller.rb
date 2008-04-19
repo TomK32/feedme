@@ -75,7 +75,6 @@ class FeedsController < ApplicationController
   # PUT /feeds/1.xml
   def update
     @feed = Feed.find(params[:id])
-
     respond_to do |format|
       if @feed.update_attributes(params[:feed])
         flash[:notice] = 'RssFeed was successfully updated.'
