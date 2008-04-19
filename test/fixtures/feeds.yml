@@ -3,4 +3,4 @@
 one:
  id: 1
  url: http://feeds.feedburner.com/RidingRails
- other_url: http://weblog.rubyonrails.org/
+ alternative_url: http://weblog.rubyonrails.org/

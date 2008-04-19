@@ -2,7 +2,7 @@
 
 <ul id="feedinfo">
   <li>Feed URL: <%= link_to @feed.url, @feed.url %></li>
-  <li>Alternative URL: <%= link_to @feed.other_url, @feed.other_url %></li>
+  <li>Alternative URL: <%= link_to @feed.alternative_url, @feed.alternative_url %></li>
 <% unless @feed.user.nil? %>
   <li>Added by <%= link_to feed.user.name, user_show_url(feed.user) %></li>
 <% end %>
