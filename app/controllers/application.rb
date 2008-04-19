@@ -8,10 +8,10 @@ class ApplicationController < ActionController::Base
   # Uncomment the :secret if you're not using the cookie session store
   protect_from_forgery # :secret => '968950020761706555ec8cff0354afad'
   
-  
   protected
   def current_user
-    current_user ||= User.find(session[:goldberg][:user_id]) rescue nil
+    # will hit the query cache in any case
+    @current_user ||= User.find(session[:goldberg][:user_id]) rescue nil
   end
   def get_feeds
     @feeds = Feed.find :all, :order => 'title'
