@@ -22,10 +22,12 @@ h2. Installing
 
 # Grab the code.
 # Copy the '@config/database.yml.dist@' to '@config/database.yml@'. Reconfigure as necessary.
-# Copy the '@config/initializers/feedme.rb.dist@' to '@config/initializers/feedme.rb@'.
-## Due to my *cough* wonderfully advanced and secure login setup, add users to the '@VALID_USERS@' hash in '@config/initializers/feedme.rb@'.
+# run '@rake db:schema:load@' (alternatively you may want to run '@rake db:migrations@')
+# run '@rake goldberg:load_bootstrap@'
 # Fire up the server.
-# Go to '@http://example.com/login@' and enter your details.
-# Add RSS feeds to the admin.
+# Login as user '@admin@' password '@admin@'
+# Change you password. I mean it!
+# Go to '@http://example.com/feeds/new@' to add your feed
 # Run (preferably via cron) '@rake feedme:pull_feeds@'.
+# Alternatively ping by going to '@http://example.com/feeds/ping?url=http://example.org/feed.rss@'
 # Hit up '@http://example.com/@' and enjoy.
