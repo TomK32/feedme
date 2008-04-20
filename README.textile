@@ -15,6 +15,7 @@ h2. Requirements
 * A decent version of Ruby.
 * Rails 2.0+
 * FeedTools
+* hpricot
 
 h2. Installing
 

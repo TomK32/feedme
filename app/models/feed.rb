@@ -1,4 +1,5 @@
 require 'feed_tools'
+require 'hpricot'
 
 class Feed < ActiveRecord::Base
   has_many :articles, :dependent => :delete_all
@@ -14,9 +15,14 @@ class Feed < ActiveRecord::Base
       content = ""
       content = item.description unless item.description.blank?
       content += item.content unless item.content.blank? or item.content == item.description
+      parsed_content = Hpricot.parse(content)
+      # removing feedburner garbage
+      parsed_content.search('/div.feedflare').remove
+      parsed_content.search('/img[@src.match/^http://feeds.feedburner.com/~r/]').remove
+
       article = self.articles.create(
         :author => item.author.name,
-        :content => content,
+        :content => parsed_content.to_s,
         :link => item.link,
         :published => item.published,
         :title => item.title
