@@ -13,7 +13,7 @@ class Feed < ActiveRecord::Base
       next if Article.find_by_link(item.link)
       content = ""
       content = item.description unless item.description.blank?
-      content += item.content unless item.content.blank?
+      content += item.content unless item.content.blank? or item.content == item.description
       article = self.articles.create(
         :author => item.author.name,
         :content => content,
