@@ -2,7 +2,7 @@
 	<h3><%= link_to article.title, article.link %></h3>
 		
 	<div class="metadata">
-<% if params[:controller] == 'timeline' %>
+<% if params[:controller] == 'front' %>
 	  <span class="title"><%= link_to h(article.feed.title), feed_url(article.feed) %></span>
 <% end %>
 	  <span class="date"><%= article.published.strftime('%A, %B %d, %Y @ %I:%M %p') %></span>

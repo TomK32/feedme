@@ -1,7 +1,7 @@
-class TimelineController < ApplicationController
+class FrontController < ApplicationController
   before_filter :get_feeds
   
-  def articles_for
+  def index
     if params[:year].nil? or params[:month].nil? or params[:day].nil?
         @current_date = Time.now
       @articles = Article.find :all, :order => 'published DESC', :limit => 10

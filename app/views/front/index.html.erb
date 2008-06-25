@@ -1,4 +1,4 @@
-<% if @articles.size > 0 %>
+<% if @articles.nil? %>
     <%= render :partial => 'articles/article', :collection => @articles %>
 <% else %>
     <h2>No Articles</h2>
