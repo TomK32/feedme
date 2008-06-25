@@ -117,25 +117,5 @@
 - name: index
   permission_id: 4
   id: 24
-  url_to_use: /feeds
-  site_controller_id: 12
-- name: create
-  permission_id: 5
-  id: 25
-  url_to_use: ""
-  site_controller_id: 12
-- name: new
-  permission_id: 5
-  id: 26
-  url_to_use: ""
-  site_controller_id: 12
-- name: show
-  permission_id: 3
-  id: 27
-  url_to_use: ""
-  site_controller_id: 12
-- name: ping
-  permission_id: 4
-  id: 28
   url_to_use: ""
   site_controller_id: 12

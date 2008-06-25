@@ -23,7 +23,7 @@
 
 </table>
 
-<hr/>
+
 <p><%= link_to 'Edit', :action => (@self_reg ? 'self_edit' : 'edit'), :id => @user %> 
 <% if not @self_reg -%>
 | <%= link_to 'Delete', {:action => 'destroy', :id => @user}, 

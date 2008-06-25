@@ -6,17 +6,17 @@
   parent_id: 
   label: Home
   content_page_id: 1
-- name: about
+- name: contact_us
   controller_action_id: 
   id: 2
-  seq: 4
+  seq: 3
   parent_id: 
-  label: About
+  label: Contact Us
   content_page_id: 6
 - name: admin
   controller_action_id: 
   id: 3
-  seq: 3
+  seq: 2
   parent_id: 
   label: Administration
   content_page_id: 9
@@ -76,10 +76,17 @@
   parent_id: 9
   label: Users
   content_page_id: 
-- name: feed
+- name: credits
+  controller_action_id: 
+  id: 14
+  seq: 1
+  parent_id: 2
+  label: Credits &amp; Licence
+  content_page_id: 10
+- name: blog
   controller_action_id: 24
   id: 15
-  seq: 2
+  seq: 4
   parent_id: 
-  label: Feeds
+  label: Blog
   content_page_id: 

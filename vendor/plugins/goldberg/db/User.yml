@@ -5,9 +5,9 @@
   self_reg_confirmation_required: 
   role_id: 3
   password_salt: 
-  fullname: 
+  fullname: Administrator
   id: 2
   password_changed_at: 
   password: d033e22ae348aeb5660fc2140aec35850c4da997
-  email: 
+  email: admin@example.com
   confirmation_key: 
